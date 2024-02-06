@@ -3,11 +3,12 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: ['../../libs/shared-ui/nuxt.config.ts','../../libs/openbis/nuxt.config.ts',], //changed
-
+  extends: [
+    '../../libs/shared-ui/nuxt.config.ts',
+  ], //changed
   workspaceDir: '../../',
   srcDir: 'src',
-  buildDir: '../../dist/apps/plugin-dev-openbis/.nuxt',
+  buildDir: '../../dist/apps/documentary/.nuxt',
   devtools: { enabled: true },
   devServer: {
     host: 'localhost',
@@ -30,7 +31,10 @@ export default defineNuxtConfig({
   },
   nitro: {
     output: {
-      dir: '../../dist/apps/plugin-dev-openbis/.output',
+      dir: '../../dist/apps/documentary/.output',
     },
   },
+  modules: [
+    '@nuxt/content'
+  ],
 });

@@ -1,9 +1,8 @@
 {
-  "name": "plugin-dev-openbis",
+  "name": "documentary",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/plugin-dev-openbis/src",
+  "sourceRoot": "apps/documentary/src",
   "targets": {},
   "implicitDependencies": ["shared-ui", "openbis"]
 }
-
