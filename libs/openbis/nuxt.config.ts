@@ -26,9 +26,25 @@ export default defineNuxtConfig({
   vite: {
     plugins: [nxViteTsPaths()],
   },
-  nitro: {
+  nitro: { 
+    devProxy: {
+      '/openbis': {
+        target: 'http://localhost:8080/openbis',
+        changeOrigin: true,
+        prependPath: true,
+      },
+  },
     output: {
       dir: '../../dist/libs/openbis/.output',
     },
   },
+  app: {
+    head: {
+      title: 'OpenBiz+',
+      script: [`http://localhost:8080/openbis/resources/api/v3/openbis.esm.js`]}
+  },
+  alias: {
+    "@components": "../components/src/components",
+  },
+
 });

@@ -3,12 +3,9 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: [
-    '../../libs/shared-ui/nuxt.config.ts',
-  ], //changed
   workspaceDir: '../../',
   srcDir: 'src',
-  buildDir: '../../dist/apps/documentary/.nuxt',
+  buildDir: '../../dist/apps/crypt4gh-upload/.nuxt',
   devtools: { enabled: true },
   devServer: {
     host: 'localhost',
@@ -31,11 +28,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     output: {
-      dir: '../../dist/apps/documentary/.output',
+      dir: '../../dist/apps/crypt4gh-upload/.output',
     },
   },
-  modules: [
-    '@nuxt/content'
-  ],
-  
 });

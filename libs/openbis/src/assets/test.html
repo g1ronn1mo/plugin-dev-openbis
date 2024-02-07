@@ -1,0 +1,20 @@
+<script type="module">
+    import openbis from "http://localhost:8080/openbis/resources/api/v3/openbis.esm.js"
+    
+    var v3 = new openbis.openbis();
+    
+    v3.login("admin", "admin").done(function() {
+        v3.searchSpaces(new openbis.SpaceSearchCriteria(), new openbis.SpaceFetchOptions()).done(function(result) {
+            const numberOfSpaces = result.getObjects().length;
+            // Update the content of the output div with the number of spaces
+            document.getElementById('output').textContent = "Number of spaces: " + numberOfSpaces;
+            
+            v3.logout();
+        });
+    });
+</script>
+<body>
+    <div id="output"></div>
+</body>
+
+</html>
